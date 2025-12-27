@@ -1,0 +1,54 @@
+= Automating Documentation: From DSL to Dynamic Docs with Asciidoctor and Antora
+Ivan Ponomarev
+:revealjs_theme: black
+:revealjs_customtheme: white_course.css
+:revealjs_slideNumber:
+:revealjs_history:
+:revealjs_progress:
+:encoding: UTF-8
+:lang: ru
+include::_doc_general_attributes.adoc[]
+:doctype: article
+:toclevels: 3
+:imagesdir: images
+:source-highlighter: highlightjs
+:highlightjsdir: highlight
+:icons: font
+:iconfont-remote!:
+:iconfont-name: font-awesome-4.7.0/css/font-awesome
+:revealjs_mouseWheel: true
+:revealjs_center: false
+:revealjs_transition: none
+:revealjs_width: 1600
+:revealjs_height: 900
+:stem: latexmath
+
+
+//== Часть 1. Введение
+:!figure-caption:
+
+[%notitle]
+== Who am I
+
+[cols="30a,70a"]
+|===
+|image::ivan.jpg[]
+|
+
+Ivan Ponomarev
+
+* Team Lead @ Synthesized.io
+* Teaching CS at universities
+
+
+|===
+
+== Thanks for listening!
+
+Give jedis-mock a image:star.svg[width=64]!
+
+https://github.com/fppt/jedis-mock
+
+icon:envelope[size=lg] ivan@synthesized.io
+
+icon:twitter[size=lg] @inponomarev
