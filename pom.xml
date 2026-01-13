@@ -17,9 +17,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>3.0.0</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>3.2.0</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.5.12</asciidoctorj.version>
-        <asciidoctorj.diagram.version>2.3.0</asciidoctorj.diagram.version>
+        <asciidoctorj.diagram.version>2.3.2</asciidoctorj.diagram.version>
         <jruby.version>9.4.6.0</jruby.version>
         <revealjs.version>3.9.2</revealjs.version>
         <!-- Use 'master' as version and remove the 'v' prefixing the download url to use the current snapshot version  -->
