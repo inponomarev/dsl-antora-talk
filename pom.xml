@@ -133,6 +133,11 @@
                         <artifactId>asciidoctorj-diagram</artifactId>
                         <version>${asciidoctorj.diagram.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram-jsyntrax</artifactId>
+                        <version>1.38.2</version>
+                    </dependency>
                 </dependencies>
                 <configuration>
                     <sourceDirectory>src/main/asciidoc</sourceDirectory>
