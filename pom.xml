@@ -24,6 +24,10 @@
         <revealjs.version>3.9.2</revealjs.version>
         <!-- Use 'master' as version and remove the 'v' prefixing the download url to use the current snapshot version  -->
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
+    <!--    <groovy.version>5.0.3</groovy.version>-->
+        <!--<jruby.version>10.0.2.0</jruby.version>-->
+        <luaj.version>3.0.1</luaj.version>
+        <tuprolog.version>3.3.0</tuprolog.version>
     </properties>
     
     <dependencies>
@@ -48,11 +52,39 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Groovy (GroovyShell, closures, etc.) -->
+  <!--      <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>-->
+
+        <!-- JRuby embedding (ScriptingContainer) -->
+      <dependency>
+            <groupId>org.jruby</groupId>
+            <artifactId>jruby-complete</artifactId>
+            <version>${jruby.version}</version>
+        </dependency>
+
+        <!-- LuaJ (Lua on the JVM) -->
+        <dependency>
+            <groupId>org.luaj</groupId>
+            <artifactId>luaj-jse</artifactId>
+            <version>${luaj.version}</version>
+        </dependency>
+
+        <!-- tuProlog (Prolog on the JVM) -->
+        <dependency>
+            <groupId>it.unibo.alice.tuprolog</groupId>
+            <artifactId>tuprolog</artifactId>
+            <version>${tuprolog.version}</version>
+        </dependency>
+
         <!-- Test dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.10.2</version>
+            <version>6.0.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -61,6 +93,13 @@
             <version>3.25.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>net.jqwik</groupId>
+            <artifactId>jqwik</artifactId>
+            <version>1.9.3</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
     
     <build>
@@ -184,7 +223,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>3.5.4</version>
                 <configuration>
                     <useModulePath>false</useModulePath>
                 </configuration>

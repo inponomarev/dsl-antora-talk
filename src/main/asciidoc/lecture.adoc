@@ -37,9 +37,9 @@ include::_doc_general_attributes.adoc[]
 
 Ivan Ponomarev
 
-* Team Lead at Synthesized.io
+* Team Lead at Synthesized.io (test data automation you can trust!)
 * Teaching CS and programming at universities
-
+* Writing technical documentation and slides is a substantial part of my everyday work
 |===
 
 == The task
@@ -123,9 +123,7 @@ digraph UpsideDownTree {
   yaml   [label="JsonSchema for YAML config"];
   proj   [label="JsonSchema for Projectional Editor"];
 
-  docs [label="Documentation",
-        fillcolor="#FFE66D",  // yellow highlight
-        color="#C9A700"];
+  docs [label="Documentation"];
 
   top -> kotlin;
   top -> ts;
@@ -268,58 +266,74 @@ make documentation a configurable build artefact
 
 == Code snippets with syntax highlighting
 
-[cols="50a,50a"]
-|===
-|
+
 [source,asciidoc]
 -----
 [source,java]
 ----
-class Unsound {
-  static class Constrain<A, B extends A> {}
-  static class Bind<A> {
-    <B extends A>
-    A upcast(Constrain<A,B> constrain, B b) {
-      return b;
-    }
-  }
-  static <T,U> U coerce(T t) {
-    Constrain<U,? super T> constrain = null;
-    Bind<U> bind = new Bind<U>();
-    return bind.upcast(constrain, t);
-  }
-  public static void main(String[] args) {
-    String zero = Unsound.<Integer,String>coerce(0);
-  }
-}
+include::../java/org/example/GCD.java[tag=javagcd]
 ----
 -----
 
-|
 
 [.fragment]
 [source,java]
 ----
-class Unsound {
-  static class Constrain<A, B extends A> {}
-  static class Bind<A> {
-    <B extends A>
-    A upcast(Constrain<A,B> constrain, B b) {
-      return b;
-    }
-  }
-  static <T,U> U coerce(T t) {
-    Constrain<U,? super T> constrain = null;
-    Bind<U> bind = new Bind<U>();
-    return bind.upcast(constrain, t);
-  }
-  public static void main(String[] args) {
-    String zero = Unsound.<Integer,String>coerce(0);
-  }
-}
+include::../java/org/example/GCD.java[tag=javagcd]
 ----
 
-|===
+
+== Code snippets with syntax highlighting
+
+[source,asciidoc]
+-----
+[source,ruby]
+----
+include::../resources/gcd.rb[]
+----
+-----
+
+[.fragment]
+[source,ruby]
+----
+include::../resources/gcd.rb[]
+----
+
+== Code snippets with syntax highlighting
+
+[source,asciidoc]
+-----
+[source,lua]
+----
+include::../resources/gcd.lua[]
+----
+-----
+
+
+[.fragment]
+[source,lua]
+----
+include::../resources/gcd.lua[]
+----
+
+
+== Code snippets with syntax highlighting
+
+[source,asciidoc]
+-----
+[source,prolog]
+----
+include::../resources/gcd.pl[]
+----
+-----
+
+
+[.fragment]
+[source,prolog]
+----
+include::../resources/gcd.pl[]
+----
+
 
 == GraphViz
 
@@ -517,8 +531,12 @@ plot f(x) title "exp(-x^2)" with lines lw 2
 == `include::` directive -- my favourite feature of Asciidoctor
 
 [source,asciidoc]
+-----
+[source,java]
+----
 \include::../java/org/example/WordCounter.java[]
-
+----
+-----
 
 [source,java]
 ----
@@ -527,9 +545,10 @@ include::../java/org/example/WordCounter.java[]
 
 == When we need to include only the specific snippet
 
-quote::
+[quote]
+____
 This Java Streams API pipeline converts a `Stream<String>` of text lines into a `Map<String, Long>` mapping each lowercased word to the number of times it occurs in the input.
-
+____
 
 [source,asciidoc]
 ----
@@ -610,8 +629,8 @@ user_guide
 ----
 // Antora style references
 \include::user_guide:example$data_insertion.sql[tag=snippet]
-\image::user_guide:yamlview.png[]
-\xref:user_guide:020_getting_started/datasources.adoc[Data sources]
+image::user_guide:yamlview.png[]
+xref:user_guide:020_getting_started/datasources.adoc[Data sources]
 ----
 
 == Why Antora?
