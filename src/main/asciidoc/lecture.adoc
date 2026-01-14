@@ -200,7 +200,8 @@ edge  [color="#666666", arrowsize=0.7];
 ----
 
 [.fragment]
-It's much easier to generate semantic markup language such as Asciidoctor than trying to generate HTML!
+Note: It's much easier to generate semantic markup language such as Asciidoctor +
+than trying to generate HTML!
 
 == DSL Pipeline: full picture
 
@@ -252,6 +253,14 @@ edge  [color="#666666", arrowsize=0.7];
   }
 }
 ----
+
+== DSL: conclusions
+
+* DSL as a single source of truth helps keep multiple parts of the product in sync — including (but not limited to) the documentation.
+
+* The choice of DSL approach is context-dependent, possible options are: a fully custom DSL, an existing spec language (e.g., OpenAPI or XSD), a YAML/XML-based format, or an internal DSL in a host language such as Ruby or Kotlin.
+
+* The best results usually come from choosing a technology with strong out-of-the-box tooling, so you only need a small amount of custom “glue” code.
 
 == Why Asciidoctor? Why not reStructuredText or Markdown?
 
