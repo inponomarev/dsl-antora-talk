@@ -25,8 +25,8 @@ public class GCD {
 
     //@formatter:off
 // tag::javagcd[]
-private static long gcdJava(long a, long b) {
-    return b == 0 ? Math.abs(a) : gcdJava(b, a % b);
+private static long gcd(long a, long b) {
+    return b == 0 ? Math.abs(a) : gcd(b, a % b);
 }
 // end::javagcd[]
 //@formatter:on
@@ -99,7 +99,7 @@ private static long gcdJava(long a, long b) {
 
     static long gcd(long a, long b, Lang lang) {
         return switch (lang) {
-            case JAVA -> gcdJava(a, b);
+            case JAVA -> gcd(a, b);
             case RUBY -> gcdRuby(a, b);
             case LUA -> gcdLua(a, b);
             case PROLOG -> gcdProlog(a, b);
