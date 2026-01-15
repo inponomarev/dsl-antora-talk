@@ -26,7 +26,8 @@ public class GCD {
     //@formatter:off
 // tag::javagcd[]
 private static long gcd(long a, long b) {
-    return b == 0 ? Math.abs(a) : gcd(b, a % b);
+    return b == 0 ? Math.abs(a) : //<.>
+            gcd(b, a % b); //<.>
 }
 // end::javagcd[]
 //@formatter:on

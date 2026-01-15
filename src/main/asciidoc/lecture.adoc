@@ -274,10 +274,41 @@ make documentation a configurable build artefact
 * *Truly cross-platform*: Ruby developer? Javascript developer? JVM developer? -- there's native tooling for you!
 * My favorite feature: `include::...[]`
 
+== Complex tables
+
+[cols="1,.^3,2", options=header]
+|===
+^|Document
+^|Responsible
+^|Ready
+3+|*D documents*
+|D.1
+.2+a|
+* Hellen
+* John
+* Mike
+^|✓
+|D.2
+^|
+✕
+|D.3
+a|
+* Ivan
+^|✓
+3+|*E documents*
+3+|...
+
+|D.1
+
+|===
+
+RST, MD -- only with extensions and tricks or resorting to raw HTML
+
+
 == Code snippets with syntax highlighting
 
 
-[source,asciidoc]
+[source,asciidoc,subs=-callouts]
 -----
 [source,java]
 ----
@@ -286,32 +317,39 @@ include::../java/org/example/GCD.java[tag=javagcd]
 -----
 
 
-[.fragment]
+[%step]
+--
 [source,java]
 ----
 include::../java/org/example/GCD.java[tag=javagcd]
 ----
-
-
-== Code snippets with syntax highlighting
-
-[source,asciidoc]
------
-[source,ruby]
-----
-include::../resources/gcd.rb[]
-----
------
-
-[.fragment]
-[source,ruby]
-----
-include::../resources/gcd.rb[]
-----
+<.> base case to stop recursion
+<.> Euclid’s step: reduce the problem size and recurse
+--
 
 == Code snippets with syntax highlighting
 
-[source,asciidoc]
+[source,asciidoc,subs=-callouts]
+-----
+[source,ruby]
+----
+include::../resources/gcd.rb[tag=snippet]
+----
+-----
+
+[%step]
+--
+[source,ruby]
+----
+include::../resources/gcd.rb[tag=snippet]
+----
+<.> base case to stop recursion
+<.> Euclid’s step: reduce the problem size and recurse
+--
+
+== Code snippets with syntax highlighting
+
+[source,asciidoc,subs=-callouts]
 -----
 [source,lua]
 ----
@@ -320,16 +358,19 @@ include::../resources/gcd.lua[]
 -----
 
 
-[.fragment]
+[%step]
+--
 [source,lua]
 ----
 include::../resources/gcd.lua[]
 ----
-
+<.> base case to stop recursion
+<.> Euclid’s step: reduce the problem size and recurse
+--
 
 == Code snippets with syntax highlighting
 
-[source,asciidoc]
+[source,asciidoc,subs=-callouts]
 -----
 [source,prolog]
 ----
@@ -338,12 +379,15 @@ include::../resources/gcd.pl[]
 -----
 
 
-[.fragment]
+[%step]
+--
 [source,prolog]
 ----
 include::../resources/gcd.pl[]
 ----
-
+<.> base case to stop recursion
+<.> Euclid’s step: reduce the problem size and recurse
+--
 
 == GraphViz
 
