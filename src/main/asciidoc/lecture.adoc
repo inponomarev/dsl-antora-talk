@@ -341,15 +341,12 @@ include::../resources/gcd.rb[tag=snippet]
 ----
 -----
 
-[%step]
---
 [source,ruby]
 ----
 include::../resources/gcd.rb[tag=snippet]
 ----
 <.> base case to stop recursion
 <.> Euclid’s step: reduce the problem size and recurse
---
 
 == Code snippets with syntax highlighting
 
@@ -362,15 +359,12 @@ include::../resources/gcd.lua[]
 -----
 
 
-[%step]
---
 [source,lua]
 ----
 include::../resources/gcd.lua[]
 ----
 <.> base case to stop recursion
 <.> Euclid’s step: reduce the problem size and recurse
---
 
 == Code snippets with syntax highlighting
 
@@ -383,15 +377,12 @@ include::../resources/gcd.pl[]
 -----
 
 
-[%step]
---
 [source,prolog]
 ----
 include::../resources/gcd.pl[]
 ----
 <.> base case to stop recursion
 <.> Euclid’s step: reduce the problem size and recurse
---
 
 == GraphViz
 
