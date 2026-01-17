@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+FILE="src/main/asciidoc/lecture.adoc"
+DICT="./allowed_spelling_words"
+
+if ! command -v aspell >/dev/null 2>&1; then
+  echo "ERROR: aspell is not installed or not on PATH."
+  exit 2
+fi
+
+if [[ ! -f "$FILE" ]]; then
+  echo "ERROR: file not found: $FILE"
+  exit 2
+fi
+
+if [[ ! -f "$DICT" ]]; then
+  echo "ERROR: custom dictionary not found: $DICT"
+  exit 2
+fi
+
+# Collect misspelled words, then sort + uniq.
+# -l: list misspellings
+# --personal: add your local allowed words list
+# Notes:
+#   * You can add extra options like: --lang=en_GB
+#   * We strip empty lines just in case.
+result="$(
+  aspell -l en_GB --run-together --camel-case --personal="$DICT" list < "$FILE" \
+    | sed '/^[[:space:]]*$/d' \
+    | sort -u
+)"
+
+if [[ $result ]]; then
+  echo "The following words are probably misspelled:"
+  echo "-----"
+  echo "$result"
+  echo "-----"
+  echo "Please correct the spelling or add the words above to the local dictionary."
+  exit 1
+else
+  echo "Spellchecking complete, no misspelled words found."
+fi

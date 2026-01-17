@@ -68,7 +68,7 @@ Ivan Ponomarev
 [cols="30a,70a"]
 |===
 |
-* **JSONSchema for the YAML configuration**
+* **JSON Schema for the YAML configuration**
 * The projectional editor UI
 * Documentation
 |
@@ -80,7 +80,7 @@ image::yamlconfig.png[]
 [cols="30a,70a"]
 |===
 |
-* JSONSchema for the YAML configuration
+* JSON Schema for the YAML configuration
 * **The projectional editor UI**
 * Documentation
 |
@@ -93,7 +93,7 @@ image::projectional.png[]
 [cols="30a,70a"]
 |===
 |
-* JSONSchema for the YAML configuration
+* JSON Schema for the YAML configuration
 * The projectional editor UI
 * **Documentation**
 |
@@ -101,7 +101,7 @@ image::documentation.png[]
 
 |===
 
-== DSL as a source of truth to the resque
+== DSL as a source of truth to the rescue
 
 [graphviz, "dsl.png"]
 -----
@@ -118,8 +118,8 @@ digraph UpsideDownTree {
 
   kotlin [label="Kotlin DTOs"];
   ts     [label="TypeScript DTOs"];
-  yaml   [label="JsonSchema for YAML config"];
-  proj   [label="JsonSchema for Projectional Editor"];
+  yaml   [label="JSON Schema for YAML config"];
+  proj   [label="JSON Schema for Projectional Editor"];
 
   docs [label="Documentation"];
 
@@ -142,7 +142,7 @@ ContinuousGeneratorParams:
     - $ref: "#/components/schemas/TransformationParams"
     - type: object
       description: >
-        Output data is sampled from a parameterized continuous distribution. [...]
+        Output data is sampled from a parameterised continuous distribution. [...]
       properties:
         mean:
           description: Mean of the sampled distribution
@@ -189,7 +189,7 @@ edge  [color="#666666", arrowsize=0.7];
   parser  [label="swagger-parser"];
   gen     [label="AdocGenerator\n(the custom-made part)", fillcolor="#FFE66D",  // yellow highlight
         color="#C9A700"];
-  adoc    [label="AsciiDoctor\ntoolset"];
+  adoc    [label="Asciidoctor\ntoolset"];
   html    [style=invis];
 
   openapi -> parser [label="OpenAPI spec\ntransformations.yaml"];
@@ -226,7 +226,7 @@ edge  [color="#666666", arrowsize=0.7];
   dtogen [label = "Glue code + KotlinPoet", fillcolor="#FFE66D",  // yellow highlight
         color="#C9A700"];
   tsgen [label= "openapi-generator"];
-  adoc    [label="AsciiDoctor\ntoolset"];
+  adoc    [label="Asciidoctor\ntoolset"];
   html    [label="", style=invis];
   jsonschema[label="", style=invis];
   kotlindto[label="", style=invis];
@@ -241,7 +241,7 @@ edge  [color="#666666", arrowsize=0.7];
   parser  -> dtogen;
   parser  -> tsgen;
 
-  jsongen -> jsonschema[label="JSONSchema"];
+  jsongen -> jsonschema[label="JSON Schema"];
   dtogen  -> kotlindto[label="Kotlin DTO"];
   tsgen   -> tsdto[label="Typescript DTO"];
 
@@ -275,7 +275,7 @@ edge  [color="#666666", arrowsize=0.7];
 (`:product:`, `:version:`, `ifdef::[]`, `ifeval::[]`) +
 make documentation a configurable build artefact
 * *Countless diagram-as-code integrations*: you can keep rich, colorful illustrations in plain text (Graphviz, PlantUML, Mermaid, Gnuplot, JSyntrax etc.)
-* *Truly cross-platform*: Ruby developer? Javascript developer? JVM developer? -- there's native tooling for you!
+* *Truly cross-platform*: Ruby developer? JavaScript developer? JVM developer? -- there's native tooling for you!
 * My favorite feature: `include::...[]`
 
 == Complex tables
@@ -288,7 +288,7 @@ make documentation a configurable build artefact
 3+|*D documents*
 |D.1
 .2+a|
-* Hellen
+* Helen
 * John
 * Mike
 ^|✓
@@ -384,8 +384,7 @@ include::../resources/gcd.pl[]
 <.> base case to stop recursion
 <.> Euclid’s step: reduce the problem size and recurse
 
-== GraphViz
-
+== Graphviz
 
 [cols=".^50a,<.^50a"]
 |===
